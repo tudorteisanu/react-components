@@ -1,8 +1,8 @@
-import api from "../../api";
+import api from "../../../api";
 import { useDispatch } from "react-redux";
-import { setUsers } from "../../store/modules/users";
+import { setUsers } from "../../../store/modules/users";
 import { useSearchParams } from "react-router-dom";
-import queryString from "../../services/query-string";
+import { serializeParams, parseQuery } from "../../../services/query-string";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 
@@ -10,7 +10,7 @@ const UsersFilter = () => {
   const dispatch = useDispatch();
   const [filter, setFilter] = useState({});
   const [searchParams, setSearchParams] = useSearchParams();
-  const defaultValues = queryString.parse(searchParams.toString());
+  const defaultValues = parseQuery(searchParams.toString());
 
   const { register, handleSubmit, reset } = useForm({
     defaultValues,
@@ -27,7 +27,7 @@ const UsersFilter = () => {
 
   const updateFilters = (filters) => {
     setFilter(filters);
-    const search = queryString.stringify(filters);
+    const search = serializeParams(filters);
     setSearchParams(search);
   };
 

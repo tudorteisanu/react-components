@@ -1,5 +1,5 @@
 import axios from "axios";
-import queryString from "../query-string";
+import { serializeParams } from "../query-string";
 
 export class Http {
   axios;
@@ -23,7 +23,7 @@ export class Http {
         params,
         paramsSerializer: {
           serialize: (params) => {
-            return queryString.stringify(params);
+            return serializeParams(params);
           },
         },
       });

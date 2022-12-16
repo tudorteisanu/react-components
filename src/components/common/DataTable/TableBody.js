@@ -1,5 +1,5 @@
-import { AddProps } from "../../services/add-props";
-import { ConditionalWrapping } from "../common/ConditionalWrapping";
+import { AddProps } from "../../../services/add-props";
+import { ConditionalWrapping } from "../ConditionalWrapping";
 
 export const TableBody = ({ headers, items, cell, actions }) => {
   return (

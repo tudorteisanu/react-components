@@ -1,8 +1,8 @@
-import "../../App.css";
+import "../../../App.css";
 import { TableHead } from "./TableHead";
 import { TableBody } from "./TableBody";
 
-const DataTable = ({ items, headers, actions, cell }) => {
+export const DataTable = ({ items, headers, actions, cell }) => {
   return (
     <table className={"Table"}>
       <TableHead headers={headers} />
@@ -15,5 +15,3 @@ const DataTable = ({ items, headers, actions, cell }) => {
     </table>
   );
 };
-
-export default DataTable;

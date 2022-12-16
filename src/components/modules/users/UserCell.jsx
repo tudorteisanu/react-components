@@ -3,7 +3,7 @@ export const UserCell = ({ value, property }) => {
     return <img width={50} height={50} src={value} alt={""} />;
   }
 
-  if (property === "birthdate") {
+  if (property === "createdAt") {
     return new Date(value).toISOString().substring(0, 10);
   }
 
