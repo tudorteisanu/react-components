@@ -1,4 +1,4 @@
-import { UsersApi } from "./users";
+import { UsersApi } from "./modules/users";
 
 const api = {
   users: () => new UsersApi(),

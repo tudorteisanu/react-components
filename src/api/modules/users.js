@@ -1,4 +1,4 @@
-import { ApiModel } from "./ApiModel";
+import { ApiModel } from "../ApiModel";
 
 export class UsersApi extends ApiModel {
   constructor() {
