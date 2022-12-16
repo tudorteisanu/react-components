@@ -1,14 +1,40 @@
+import api from "../../api";
+
 class UserService {
-  edit(id) {
-    console.log('edit', id);
+  constructor() {
+    this.api = api;
   }
 
-  ban(id) {
-    console.log('ban',id);
+  async edit(id) {
+    try {
+      await this.api.users().getForEdit(id);
+    } catch (e) {
+      console.log(e);
+    }
   }
 
-  unban(id) {
-    console.log('unban', id);
+  async loadData(params = {}) {
+    try {
+      return  await this.api.users().loadData(params);
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  async unban(id) {
+    try {
+      await this.api.users().unban(id);
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  async ban(id) {
+    try {
+      await this.api.users().ban(id);
+    } catch (e) {
+      console.log(e);
+    }
   }
 }
 

@@ -43,16 +43,16 @@ const headers = [
     value: "name",
   },
   {
-    text: "Birthdate",
-    value: "birthdate",
+    text: "Price",
+    value: "price",
   },
   {
-    text: "Avatar",
-    value: "avatar",
+    text: "Category",
+    value: "category",
   },
   {
-    text: "email",
-    value: "email",
+    text: "CreatedAt",
+    value: "createdAt",
   },
   {
     text: "",
