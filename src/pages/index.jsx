@@ -1,18 +1,19 @@
-import FormInput from "../components/common/form/FormInput";
+import FormInput from "../components/base/form/FormInput";
 import { useForm } from "react-hook-form";
-import BaseForm from "../components/common/form/BaseForm";
+import BaseForm from "../components/base/form/BaseForm";
 import rules from "../utils/validation-rules";
-import FormSelect from "../components/common/form/FormSelect";
-import FormCheckbox from "../components/common/form/FormCheckbox";
+import FormSelect from "../components/base/form/FormSelect";
+import FormCheckbox from "../components/base/form/FormCheckbox";
 import { ROLES } from "../data";
 import { Button, Typography } from "@mui/material";
+import BaseDatePicker from "../components/base/form/BaseDatePicker";
 
 const Home = () => {
   const form = useForm({
-    defaultValues: {
-      roleId: 2,
-    },
     mode: "all",
+    defaultValues: {
+      date: "2023-01-01",
+    },
   });
   const onSubmit = (data) => console.log(data);
   const setErrors = (event) => {
@@ -42,6 +43,7 @@ const Home = () => {
           name={"agreements"}
           rules={[rules.required]}
         />
+        <BaseDatePicker inputFormat={'DD.MM.YYYY'} label={"Date"} name={"date"} />
 
         <Button variant="outlined" type={"submit"}>
           Submit
